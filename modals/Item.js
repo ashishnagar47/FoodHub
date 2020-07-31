@@ -2,23 +2,23 @@ const mongoose =require('mongoose')
 const {ObjectId}=mongoose.Schema.Types
 
 const ItemSchema=new mongoose.Schema({
-    name={
+    name:{
         type:String,
         required:true
     },
-    image={
+    image:{
         type:String,
         required:true
     },
-    type={
+    type:{
         type:String
     },
-    price={
+    price:{
         type:String,
         required:true
     },
-    postedBy={
-        type=ObjectId,
+    postedBy:{
+        type:ObjectId,
         ref:"Store"
     }
     
