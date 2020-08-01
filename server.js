@@ -25,6 +25,6 @@ mongoose.connection.on('error',(err)=>{
     console.log("error connected" , err)
 })
 
-app.listen(5000,()=>{
-    console.log("server started on http://localhost:5000")
+app.listen(5002,()=>{
+    console.log("server started on http://localhost:5002")
 })

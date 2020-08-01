@@ -3,9 +3,11 @@ const route=express();
 const mongoose=require('mongoose')
 const User=mongoose.model('User')
 const bcrypt=require('bcryptjs')
-//const jwt=require('jsonwebtoken')
+const jwt=require('jsonwebtoken')
+const {JWT_SECRET} =require('../keys')
+const reqLogin=require('../middleware/requireLogin')
 
-route.get('/',(req,res)=>{
+route.get('/protected',reqLogin,(req,res)=>{
     res.send('hello')
 })
 
@@ -37,6 +39,33 @@ route.post('/signup',(req,res)=>{
         })
     })
         .catch((err)=>console.log(err))
+})
+
+route.post('/signin',(req,res)=>{
+    const {email,password}=req.body
+
+    if(!email || !password){
+        res.status(422).json({error:"Please fill all the fields"})
+    }
+    
+    User.findOne({email:email})
+    .then((savedUser)=>{
+        if(!savedUser){
+            res.json({error:"Invalid email or password"})
+        }
+        bcrypt.compare(password,savedUser.password)
+        .then((doMatch)=>{
+            if(doMatch){
+                const token=jwt.sign({_id:savedUser._id},JWT_SECRET)
+                res.json(token)
+            }
+            else{
+                res.json({error:"Invalid email or password"})
+            }
+        })
+        .catch((err)=>console.log("Error"+ err))
+    })
+    .catch((err)=>console.log("Error2"+err))
 })
 
 module.exports=route
