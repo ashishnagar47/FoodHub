@@ -8,9 +8,9 @@ const ItemSchema=new mongoose.Schema({
     },
     image:{
         type:String,
-        required:true
+        
     },
-    type:{
+    category:{
         type:String
     },
     price:{
@@ -19,7 +19,7 @@ const ItemSchema=new mongoose.Schema({
     },
     postedBy:{
         type:ObjectId,
-        ref:"Store"
+        ref:"Seller"
     }
     
 })

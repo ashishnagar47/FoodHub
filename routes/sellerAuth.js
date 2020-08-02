@@ -1,38 +1,42 @@
 const express=require('express')
 const route=express();
 const mongoose=require('mongoose')
-const User=mongoose.model('User')
+const Seller=mongoose.model('Seller')
 const bcrypt=require('bcryptjs')
 const jwt=require('jsonwebtoken')
 const {JWT_SECRET} =require('../keys')
-const reqLogin=require('../middleware/requireLoginUser')
+const reqLogin=require('../middleware/requireLoginSeller')
 
-route.get('/protected',reqLogin,(req,res)=>{
+route.get('/protected1',reqLogin,(req,res)=>{
     res.send('hello')
 })
 
-route.post('/signup',(req,res)=>{
-    const {name,email,password}=req.body
+route.post('/seller/signup',(req,res)=>{
+    const {name,email,password,storeName,image,address,cityName}=req.body
     if(!name || !email || !password){
        return res.status(422).json({error:"Please fill all the fields"})
     }
     
-    User.findOne({email:email})
-        .then((savedUser)=>{
-            if(savedUser){
+    Seller.findOne({email:email})
+        .then((savedSeller)=>{
+            if(savedSeller){
                return res.status(422).json({error:"email Id already exist"})
             }
             
             bcrypt.hash(password,12)
             .then(hashedPassword=>{
-                const user=new User({
+                const seller=new Seller({
                     name,
                     email,
-                    password:hashedPassword
+                    password:hashedPassword,
+                    storeName,
+                    image,
+                    address,
+                    cityName
                 })
             
-            user.save()
-            .then(user=>{
+            seller.save()
+            .then(seller=>{
                 res.json({message:"Saved Successfully"})
             })
             .catch((err)=>console.log(err))
@@ -41,22 +45,22 @@ route.post('/signup',(req,res)=>{
         .catch((err)=>console.log(err))
 })
 
-route.post('/signin',(req,res)=>{
+route.post('/seller/signin',(req,res)=>{
     const {email,password}=req.body
 
     if(!email || !password){
         res.status(422).json({error:"Please fill all the fields"})
     }
     
-    User.findOne({email:email})
-    .then((savedUser)=>{
-        if(!savedUser){
+    Seller.findOne({email:email})
+    .then((savedSeller)=>{
+        if(!savedSeller){
             res.json({error:"Invalid email or password"})
         }
-        bcrypt.compare(password,savedUser.password)
+        bcrypt.compare(password,savedSeller.password)
         .then((doMatch)=>{
             if(doMatch){
-                const token=jwt.sign({_id:savedUser._id},JWT_SECRET)
+                const token=jwt.sign({_id:savedSeller._id},JWT_SECRET)
                 res.json(token)
             }
             else{

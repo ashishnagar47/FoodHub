@@ -20,11 +20,14 @@ const sellerSchema=new mongoose.Schema({
     },
     image:{
         type:String,
-        require:true
     },
-    location:{
+    address:{
         type:String,
         require:true
+    },
+    cityName:{
+        type:String,
+        required:true
     }
     
 })
