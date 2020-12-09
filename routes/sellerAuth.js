@@ -4,7 +4,7 @@ const mongoose=require('mongoose')
 const Seller=mongoose.model('Seller')
 const bcrypt=require('bcryptjs')
 const jwt=require('jsonwebtoken')
-const {JWT_SECRET} =require('../keys')
+const {JWT_SECRET} =require('../config/keys')
 const reqLogin=require('../middleware/requireLoginSeller')
 
 route.get('/protected1',reqLogin,(req,res)=>{
