@@ -33,4 +33,13 @@ route.get('/showItem',(req,res)=>{
     .catch(err=>console.log(err))
 })
 
+route.get('/myItem',reqLoginSeller,(req,res)=>{
+    Item.find({postedBy:req.user._id})
+    .populate("postedBy","_id storeName address cityName")
+    .then(myItem=>{
+        res.json({myItem})
+    })
+    .catch(err=>console.log(err))
+})
+
 module.exports=route;
