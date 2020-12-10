@@ -6,15 +6,17 @@ const reqLoginSeller=require('../middleware/requireLoginSeller')
 
 
 route.post('/createItem',reqLoginSeller,(req,res)=>{
-    const {name,category,price}=req.body;
+    const {name,category,price,picture}=req.body;
     if(!name || !category || !price){
        return res.json({error:"Please fill all the fields"})
     }
     req.user.password=undefined;
+    // req.user.address=undefined;
     const item=new Item({
         name,
         category,
         price,
+        picture,
         postedBy:req.user
     })
     item.save()

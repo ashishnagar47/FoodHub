@@ -8,7 +8,7 @@ const {JWT_SECRET} =require('../config/keys')
 const reqLogin=require('../middleware/requireLoginSeller')
 
 route.get('/protected1',reqLogin,(req,res)=>{
-    res.send('hello')
+    res.send('hello seller')
 })
 
 route.post('/seller/signup',(req,res)=>{

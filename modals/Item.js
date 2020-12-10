@@ -17,6 +17,9 @@ const ItemSchema=new mongoose.Schema({
         type:String,
         required:true
     },
+    picture:{
+        type:String
+    },
     postedBy:{
         type:ObjectId,
         ref:"Seller"
