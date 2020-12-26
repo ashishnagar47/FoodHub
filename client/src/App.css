@@ -1,5 +1,7 @@
-.Intro{
-    background-image: url("./media/food1.jpg");
+
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+.Navbar{
+    background-image: url("./media/homePage.png");
     background-position: center; 
     margin: 0%;
     margin-top: -12vh;
@@ -10,16 +12,17 @@
 
 .name{
     font-size: 10vw;
-    margin-left: 25%;
+    margin-left: 23%;
     margin-top: 5%;
     font-weight: bolder;
     color:rgba(255, 255, 255, 0.918);
+    font-family: 'Fredericka the Great', cursive;
 }
 
 .navbar{
-    width: 60%;
+    width:50%;
     height: 18%;
-    margin-left: 20%;
+    margin-left: 24%;
     border-radius: 20px;
 }
 
@@ -56,6 +59,63 @@
     font-size: 3rem;
     margin-left: 5%;
 }
+.merchantPage{
+    display: flex;
+}
+.merchantPageImage{
+    height: 100vh;
+    width: 45.58vw;
+    margin-left: 12%;
+}
+.merchantTitle{
+    width: 35vw;
+    font-size: 3vw;
+    margin-left: 15%;
+    margin-top: 8%;
+    font-weight: bolder;
+    color:rgba(73, 209, 61, 0.918);
+    font-family: 'Fredericka the Great', cursive;
+}
+.merchantView{
+    display: flex;
+    height: 20vh;
+}
+.authentication{
+    margin-top: 10%;
+    font-size: 1vw;
+    margin-left: 2vw;
+    font-weight: bold;
+    display: flex;
+    
+    /* margin-right: 50%; */
+}
+.btn{
+    margin-left: 1vw;
+}
+
+.auth-card{
+    padding: 20px;
+    text-align: center;
+    width: 40vw;
+    height: 35vh;
+     margin-top:-30% ;
+}
+.auth-card1{
+    padding: 20px;
+    text-align: center;
+    width: 40vw;
+    height: 75vh;
+     margin-top: -38%;
+}
+
+.input-field input[type=text]:focus {
+    border-bottom: 1px solid rgb(62,127,226) !important;
+    box-shadow: 0 1px 0 0 rgb(62, 127, 226) !important;
+  }
+  .input-field input[type=password]:focus {
+    border-bottom: 1px solid rgb(62,127,226) !important;
+    box-shadow: 0 1px 0 0 rgb(62, 127, 226) !important;
+  }
 
 /* for mobiles */
 @media only screen and (max-width:700px){
@@ -98,4 +158,45 @@
         margin-left: 8%;
         margin-top: 5%;
     }
+    .authentication{
+        margin-top: 10%;
+        font-size: 1px;
+        margin-left:8%;
+        /* font-weight: bold; */
+        display: flex;
+        
+        /* margin-right: 50%; */
+    }
+    .merchantTitle{
+        width: 35vw;
+        font-size: 5vw;
+        margin-left: 15%;
+        margin-top: 8%;
+        font-weight: bolder;
+        color:rgba(73, 209, 61, 0.918);
+        font-family: 'Fredericka the Great', cursive;
+    }
+    .merchantPageImage{
+        display: none;
+    }
+    .auth-card{
+        padding: 20px;
+        text-align: center;
+        width: 80vw;
+        height: 35vh;
+         margin-top: 50px; 
+    }
+    /* .Login{
+        margin-top: 0%;
+    } */
+    .auth-card1{
+        padding: 20px;
+        text-align: center;
+        width: 80vw;
+        height: 75vh;
+         margin-top: -20px ; 
+    }
+
+
+
 }

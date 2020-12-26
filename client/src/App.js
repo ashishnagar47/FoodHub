@@ -2,11 +2,30 @@
 import './App.css';
 import { Intro } from './components/Intro';
 import Navbar from "./components/Navbar"
+import {BrowserRouter,Route} from "react-router-dom"
+import HomePageSeller from './components/HomePageSeller';
+import SellerLogin from './components/SellerLogin';
+import SellerSignup from './components/SellerSignup';
 
 function App() {
   return (
     <div className="App">
-      <Intro></Intro>
+      <BrowserRouter>
+        <Route exact path="/">
+        <Navbar />
+          <Intro />
+        </Route>
+        <Route path="/seller">
+          <HomePageSeller />
+        </Route>
+        <Route path="/seller/login">
+            <SellerLogin></SellerLogin>
+        </Route>
+        <Route path="/seller/signup">
+            <SellerSignup />
+        </Route>
+      </BrowserRouter>
+      
     </div>
   );
 }

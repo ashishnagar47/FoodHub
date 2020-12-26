@@ -2,35 +2,28 @@ import React from 'react'
 import dominos from "../media/Dominos.webp"
 import BurgerKing from "../media/burgerKing.jpeg"
 import behrouz from "../media/behrouz.jpg"
+import ahmedabad from "../media/ahmedabad.png"
+import bangalore from "../media/bangalore.jpg"
+import chennai from "../media/chennai.jpg"
+import delhi from "../media/delhi.jpg"
+import hyderabad from "../media/hyderabad.jpg"
+import mumbai from "../media/mumbai.jpg"
+import kolkata from "../media/Kolkata.jpg"
+import pune from "../media/pune.webp"
+import gurgaon from "../media/gurgaon.jpg"
+import KFC from "../media/KFC.png"
+import subway from "../media/subway.webp"
+import wow_Momo from "../media/wow-Momo.jpg"
+
 
 export const Intro = () => {
 return (
 <div  >
-    <div className="Intro">
-    <div className="name">
-    FOODHUB
-    </div>
-    <nav className="navbar navbar-light bg-light row">
-        <div className="dropdown">
-            <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Location
-            </button>
-            <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a className="dropdown-item" href='#' >Action</a>
-                <a className="dropdown-item" href="#" >Another action</a>
-                <a className="dropdown-item" href="#" >Something else here</a>
-            </div>
-        </div>
-        <input className="form-control inp1  col-6" type="search" placeholder="Search" aria-label="Search" />
-        <button className="btn btn-outline-success  col-4" type="submit">Search</button>
-    </nav>
-    </div>
     <div className="text1">
-            Popular Items
-        </div>
+        Popular Items
+    </div>
+
     <div className="Popular">
-        
-        
         <div className="card ">
             <img className="card-img-top" src={dominos} alt="Card image cap" />
             <div className="card-body">
@@ -49,7 +42,96 @@ return (
                 <h4 className="card-title ">Behrouz Biryani</h4>
             </div>
         </div>
+        <div className="card ">
+            <img className="card-img-top" src={KFC} alt="Card image cap" />
+            <div className="card-body">
+                <h4 className="card-title ">KFC</h4>
+            </div>
+        </div>
+        <div className="card ">
+            <img className="card-img-top" src={wow_Momo} alt="Card image cap" />
+            <div className="card-body">
+                <h4 className="card-title ">Wow Momo</h4>
+            </div>
+        </div>
+        <div className="card ">
+            <img className="card-img-top" src={subway} alt="Card image cap" />
+            <div className="card-body">
+                <h4 className="card-title ">Subway</h4>
+            </div>
+        </div>
+
     </div>
+
+    <div>
+        <div className="text1">
+            Popular Cities
+        </div>
+
+        <div className="Popular">
+            <div className="card ">
+                <img className="card-img-top" src={ahmedabad} alt="Card image cap" />
+                <div className="card-body">
+                    <h4 className="card-title ">Ahmedabad</h4>
+                </div>
+            </div>
+            <div className="card ">
+                <img className="card-img-top" src={bangalore} alt="Card image cap" />
+                <div className="card-body">
+                    <h4 className="card-title ">Bangalore</h4>
+                </div>
+            </div>
+            <div className="card ">
+                <img className="card-img-top" src={chennai} alt="Card image cap" />
+                <div className="card-body">
+                    <h4 className="card-title ">Chennai</h4>
+                </div>
+            </div>
+            <div className="card ">
+                <img className="card-img-top" src={delhi} alt="Card image cap" />
+                <div className="card-body">
+                    <h4 className="card-title ">Delhi</h4>
+                </div>
+            </div>
+            <div className="card ">
+                <img className="card-img-top" src={gurgaon} alt="Card image cap" />
+                <div className="card-body">
+                    <h4 className="card-title ">Gurgaon</h4>
+                </div>
+            </div>
+            <div className="card ">
+                <img className="card-img-top" src={hyderabad} alt="Card image cap" />
+                <div className="card-body">
+                    <h4 className="card-title ">Hyderabad</h4>
+                </div>
+            </div>
+            <div className="card ">
+                <img className="card-img-top" src={mumbai} alt="Card image cap" />
+                <div className="card-body">
+                    <h4 className="card-title ">Mumbai</h4>
+                </div>
+            </div>
+            <div className="card ">
+                <img className="card-img-top" src={kolkata} alt="Card image cap" />
+                <div className="card-body">
+                    <h4 className="card-title ">Kolkata</h4>
+                </div>
+            </div>
+            <div className="card ">
+                <img className="card-img-top" src={pune} alt="Card image cap" />
+                <div className="card-body">
+                    <h4 className="card-title ">Pune</h4>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div>
+        For Merchants 
+        <a href="/seller">click here</a>
+    </div>
+
 </div>
 )
 }
