@@ -15,7 +15,7 @@ function HomePageSeller() {
             </div>
 
             <div >
-                <img className="merchantPageImage" src={sellerPage}></img>
+                <img className="merchantPageImage" src={sellerPage} alt="Card cap"></img>
             </div>
             
         </div>

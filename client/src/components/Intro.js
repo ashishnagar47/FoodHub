@@ -25,37 +25,37 @@ return (
 
     <div className="Popular">
         <div className="card ">
-            <img className="card-img-top" src={dominos} alt="Card image cap" />
+            <img className="card-img-top" src={dominos} alt="Card cap" />
             <div className="card-body">
                 <h4 className="card-title ">Dominos Pizza</h4>
             </div>
         </div>
         <div className="card ">
-            <img className="card-img-top" src={BurgerKing} alt="Card image cap" />
+            <img className="card-img-top" src={BurgerKing} alt="Card cap" />
             <div className="card-body">
                 <h4 className="card-title ">Burger King</h4>
             </div>
         </div>
         <div className="card ">
-            <img className="card-img-top" src={behrouz} alt="Card image cap" />
+            <img className="card-img-top" src={behrouz} alt="Card cap" />
             <div className="card-body">
                 <h4 className="card-title ">Behrouz Biryani</h4>
             </div>
         </div>
         <div className="card ">
-            <img className="card-img-top" src={KFC} alt="Card image cap" />
+            <img className="card-img-top" src={KFC} alt="Card cap" />
             <div className="card-body">
                 <h4 className="card-title ">KFC</h4>
             </div>
         </div>
         <div className="card ">
-            <img className="card-img-top" src={wow_Momo} alt="Card image cap" />
+            <img className="card-img-top" src={wow_Momo} alt="Card cap" />
             <div className="card-body">
                 <h4 className="card-title ">Wow Momo</h4>
             </div>
         </div>
         <div className="card ">
-            <img className="card-img-top" src={subway} alt="Card image cap" />
+            <img className="card-img-top" src={subway} alt="Card cap" />
             <div className="card-body">
                 <h4 className="card-title ">Subway</h4>
             </div>
@@ -70,55 +70,55 @@ return (
 
         <div className="Popular">
             <div className="card ">
-                <img className="card-img-top" src={ahmedabad} alt="Card image cap" />
+                <img className="card-img-top" src={ahmedabad} alt="Card cap" />
                 <div className="card-body">
                     <h4 className="card-title ">Ahmedabad</h4>
                 </div>
             </div>
             <div className="card ">
-                <img className="card-img-top" src={bangalore} alt="Card image cap" />
+                <img className="card-img-top" src={bangalore} alt="Card cap" />
                 <div className="card-body">
                     <h4 className="card-title ">Bangalore</h4>
                 </div>
             </div>
             <div className="card ">
-                <img className="card-img-top" src={chennai} alt="Card image cap" />
+                <img className="card-img-top" src={chennai} alt="Card cap" />
                 <div className="card-body">
                     <h4 className="card-title ">Chennai</h4>
                 </div>
             </div>
             <div className="card ">
-                <img className="card-img-top" src={delhi} alt="Card image cap" />
+                <img className="card-img-top" src={delhi} alt="Card cap" />
                 <div className="card-body">
                     <h4 className="card-title ">Delhi</h4>
                 </div>
             </div>
             <div className="card ">
-                <img className="card-img-top" src={gurgaon} alt="Card image cap" />
+                <img className="card-img-top" src={gurgaon} alt="Card cap" />
                 <div className="card-body">
                     <h4 className="card-title ">Gurgaon</h4>
                 </div>
             </div>
             <div className="card ">
-                <img className="card-img-top" src={hyderabad} alt="Card image cap" />
+                <img className="card-img-top" src={hyderabad} alt="Card cap" />
                 <div className="card-body">
                     <h4 className="card-title ">Hyderabad</h4>
                 </div>
             </div>
             <div className="card ">
-                <img className="card-img-top" src={mumbai} alt="Card image cap" />
+                <img className="card-img-top" src={mumbai} alt="Card cap" />
                 <div className="card-body">
                     <h4 className="card-title ">Mumbai</h4>
                 </div>
             </div>
             <div className="card ">
-                <img className="card-img-top" src={kolkata} alt="Card image cap" />
+                <img className="card-img-top" src={kolkata} alt="Card cap" />
                 <div className="card-body">
                     <h4 className="card-title ">Kolkata</h4>
                 </div>
             </div>
             <div className="card ">
-                <img className="card-img-top" src={pune} alt="Card image cap" />
+                <img className="card-img-top" src={pune} alt="Card cap" />
                 <div className="card-body">
                     <h4 className="card-title ">Pune</h4>
                 </div>
@@ -129,7 +129,7 @@ return (
 
     <div>
         For Merchants 
-        <a href="/seller">click here</a>
+        <a href="/seller/login">click here</a>
     </div>
 
 </div>

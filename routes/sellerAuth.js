@@ -4,7 +4,7 @@ const mongoose=require('mongoose')
 const Seller=mongoose.model('Seller')
 const bcrypt=require('bcryptjs')
 const jwt=require('jsonwebtoken')
-const {JWT_SECRET} =require('../config/keys')
+const {JWT_SECRET} =require('../configuration/keys')
 const reqLogin=require('../middleware/requireLoginSeller')
 
 route.get('/protected1',reqLogin,(req,res)=>{
@@ -13,7 +13,9 @@ route.get('/protected1',reqLogin,(req,res)=>{
 
 route.post('/seller/signup',(req,res)=>{
     const {name,email,password,storeName,image,address,cityName}=req.body
-    if(!name || !email || !password){
+    console.log(req.body);
+    if(!name || !email || !password ||!storeName ||!address||!cityName ||!image){
+        console.log(name,email,password)
        return res.status(422).json({error:"Please fill all the fields"})
     }
     
@@ -61,7 +63,9 @@ route.post('/seller/signin',(req,res)=>{
         .then((doMatch)=>{
             if(doMatch){
                 const token=jwt.sign({_id:savedSeller._id},JWT_SECRET)
-                res.json(token)
+                const {_id,name,email}=savedSeller;
+                res.json({token,user:{_id,name,email}})
+                // res.json({message:"Signin succesfully"})
             }
             else{
                 res.json({error:"Invalid email or password"})

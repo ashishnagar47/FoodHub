@@ -4,6 +4,10 @@ const Navbar=()=> {
     return (
         <div >
            <div className="Navbar">
+               <div>
+                   <a className="name1">Login</a>
+                   <a className="name1">Signup</a>
+               </div>
                 <div className="name">
                     FOODHUB
                 </div>
