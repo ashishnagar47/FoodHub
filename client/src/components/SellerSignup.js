@@ -36,8 +36,10 @@ function SellerSignup() {
             M.toast({html:data.error,classes:"#37474f blue-grey darken-3"})
             }
             else{
+                localStorage.setItem("jwt",data.token)
+                localStorage.setItem("user",JSON.stringify(data.user))
                 M.toast({html:data.message,classes:"#00e676 green accent-3"})
-                history.push('/seller/login')
+                history.push('/seller')
             }
         })
     }

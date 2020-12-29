@@ -22,7 +22,10 @@ function SellerLogin() {
                 M.toast({html:data.error,classes:"#37474f blue-grey darken-3"})
                 }
                 else{
-                    // M.toast({html:data.message,classes:"#00e676 green accent-3"})
+                    console.log(data)
+                    localStorage.setItem("jwt",data.token)
+                    localStorage.setItem("user",JSON.stringify(data.user))
+                    M.toast({html:"Loggedin Succesfully",classes:"#00e676 green accent-3"})
                     history.push('/seller')
                 }
         })

@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import {useHistory} from 'react-router-dom'
 import sellerPage from "../media/sellerPage.jpg"
 import M from "materialize-css"
@@ -11,6 +11,34 @@ function AddItemPage() {
     const [image,setImage]=useState("");
     const  [description,setDescription]=useState("");
     const [url,setUrl]=useState("");
+
+    useEffect(()=>{
+        if(url){
+            fetch("/createItem",{
+                method:"post",
+                headers:{
+                    "Content-Type":"application/json",
+                    "Authorization":"Bearer "+localStorage.getItem("jwt")
+                },
+                body:JSON.stringify({
+                    name,
+                    category,
+                    price,
+                    description,
+                    picture:url
+                })
+            }).then(res=>res.json())
+            .then(data=>{
+                if(data.error){
+                M.toast({html:data.error,classes:"#37474f blue-grey darken-3"})
+                }
+                else{
+                    M.toast({html:"Created Succesfully",classes:"#00e676 green accent-3"})
+                    history.push('/seller')
+                }
+            })
+    }
+    },[url])
     const PostData=()=>{
         const data=new FormData();
         data.append("file",image);
@@ -24,28 +52,7 @@ function AddItemPage() {
         .then(data=>setUrl(data.url))
         .catch(err=>{console.log(err)})
 
-        fetch("/createItem",{
-            method:"post",
-            headers:{
-                "Content-Type":"application/json"
-            },
-            body:JSON.stringify({
-                name,
-                category,
-                price,
-                description,
-                picture:url
-            })
-        }).then(res=>res.json())
-        .then(data=>{
-            if(data.error){
-            M.toast({html:data.error,classes:"#37474f blue-grey darken-3"})
-            }
-            else{
-                M.toast({html:"Created Succesfully",classes:"#00e676 green accent-3"})
-                history.push('/seller')
-            }
-        })
+        
     }
 
     return (
