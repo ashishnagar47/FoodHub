@@ -129,7 +129,7 @@ return (
 
     <div>
         For Merchants 
-        <a href="/seller/login">click here</a>
+        <a href="/sell/login">click here</a>
     </div>
 
 </div>

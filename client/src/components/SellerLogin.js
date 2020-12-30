@@ -1,8 +1,10 @@
-import React,{useState} from 'react'
+import React,{useState,useContext} from 'react'
 import {Link,useHistory} from "react-router-dom"
+import {UserContext} from "../App"
 import M from "materialize-css"
 
 function SellerLogin() {
+    const {state,dispatch}=useContext(UserContext)
     const history=useHistory();
     const [email,setEmail]=useState("");
     const [password,setPassword]=useState("");
@@ -24,7 +26,8 @@ function SellerLogin() {
                 else{
                     console.log(data)
                     localStorage.setItem("jwt",data.token)
-                    localStorage.setItem("user",JSON.stringify(data.user))
+                    localStorage.setItem("seller",JSON.stringify(data.user))
+                    dispatch({type:"SELLER",payload:data.seller})
                     M.toast({html:"Loggedin Succesfully",classes:"#00e676 green accent-3"})
                     history.push('/seller')
                 }

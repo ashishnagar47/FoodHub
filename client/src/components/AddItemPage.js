@@ -9,7 +9,7 @@ function AddItemPage() {
     const [category,setCategory]=useState("");
     const [price,setPrice]=useState("");
     const [image,setImage]=useState("");
-    const  [description,setDescription]=useState("");
+    const [description,setDescription]=useState("");
     const [url,setUrl]=useState("");
 
     useEffect(()=>{

@@ -18,9 +18,9 @@ const Navbar=()=> {
                             Location
                         </button>
                         <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a className="dropdown-item" href='#' >Action</a>
-                            <a className="dropdown-item" href="#" >Another action</a>
-                            <a className="dropdown-item" href="#" >Something else here</a>
+                            <a className="dropdown-item"  >Action</a>
+                            <a className="dropdown-item"  >Another action</a>
+                            <a className="dropdown-item"  >Something else here</a>
                         </div>
                     </div>
                     <input className="form-control inp1  col-6" type="search" placeholder="Search" aria-label="Search" />
