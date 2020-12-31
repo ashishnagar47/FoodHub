@@ -1,4 +1,5 @@
-import React from 'react'
+import React,{useContext} from 'react'
+import {UserContext} from '../App'
 import dominos from "../media/Dominos.webp"
 import BurgerKing from "../media/burgerKing.jpeg"
 import behrouz from "../media/behrouz.jpg"
@@ -14,9 +15,12 @@ import gurgaon from "../media/gurgaon.jpg"
 import KFC from "../media/KFC.png"
 import subway from "../media/subway.webp"
 import wow_Momo from "../media/wow-Momo.jpg"
+import {Link} from "react-router-dom"
 
 
 export const Intro = () => {
+    const {state,dispatch}=useContext(UserContext)
+     
 return (
 <div  >
     <div className="text1">
@@ -129,7 +133,8 @@ return (
 
     <div>
         For Merchants 
-        <a href="/sell/login">click here</a>
+        <Link to={state?"/seller.................x":"/sell/login"}>click here</Link>
+        {/* <a href="/sell/login">click here</a> */}
     </div>
 
 </div>

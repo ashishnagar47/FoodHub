@@ -1,5 +1,5 @@
 import './App.css';
-import React,{createContext,useReducer,useEffect} from 'react'
+import React,{createContext,useReducer,useEffect,useContext} from 'react'
 import { Intro } from './components/Intro';
 import Navbar from "./components/Navbar"
 import {BrowserRouter,Route,Switch,useHistory} from "react-router-dom"
@@ -14,14 +14,14 @@ export const UserContext=createContext();
 
 const Routing=()=>{
   const history=useHistory();
+  const {state,dispatch}=useContext(UserContext);
   useEffect(()=>{
-    const seller=JSON.parse(localStorage.getItem("seller"))
+    const seller=JSON.parse(localStorage.getItem("seller")) 
+    // console.log(seller)
     if(seller){
-       history.push("/seller")
+      dispatch({type:"USER",payload:seller})
+      //  history.push("/seller.................x")
     }
-    // else{
-    //   history.push("/")
-    // }
   },[])
 
   return(
@@ -30,7 +30,7 @@ const Routing=()=>{
         <Navbar />
         <Intro />
       </Route>
-      <Route exact path="/seller">
+      <Route exact path="/seller.................x">
           <SellerPage></SellerPage>
       </Route>
       <Route path="/sell/login">
@@ -50,6 +50,7 @@ const Routing=()=>{
 
 function App() {
   const [state,dispatch]=useReducer(reducer,initialState)
+  // console.log(state)
   return (
     <div className="App">
       <UserContext.Provider value={{state,dispatch}}>

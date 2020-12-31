@@ -20,6 +20,7 @@ function SellerLogin() {
             })
         }).then(res=>res.json())
         .then(data=>{
+            console.log(data)
             if(data.error){
                 M.toast({html:data.error,classes:"#37474f blue-grey darken-3"})
                 }
@@ -27,9 +28,10 @@ function SellerLogin() {
                     console.log(data)
                     localStorage.setItem("jwt",data.token)
                     localStorage.setItem("seller",JSON.stringify(data.user))
+                    // console.log(data.user)
                     dispatch({type:"SELLER",payload:data.seller})
                     M.toast({html:"Loggedin Succesfully",classes:"#00e676 green accent-3"})
-                    history.push('/seller')
+                    history.push('/seller.................x')
                 }
         })
     }
