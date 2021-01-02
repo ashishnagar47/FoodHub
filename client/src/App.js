@@ -9,6 +9,7 @@ import SellerSignup from './components/SellerSignup';
 import SellerPage from './components/SellerPage';
 import AddItemPage from './components/AddItemPage';
 import {reducer,initialState} from './reducer/Reducer'
+ import StoresCitywise from './components/StoresCitywise';
 
 export const UserContext=createContext();
 
@@ -43,6 +44,9 @@ const Routing=()=>{
       </Route>
       <Route path="/seller/addItem">
           <AddItemPage></AddItemPage>
+      </Route>
+      <Route path="/seller/:cityName" component={StoresCitywise}>
+        {/* <StoresCitywise></StoresCitywise> */}
       </Route>
     </Switch>
   )

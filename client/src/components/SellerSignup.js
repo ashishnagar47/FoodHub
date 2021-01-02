@@ -37,7 +37,7 @@ function SellerSignup() {
             }
             else{
                 localStorage.setItem("jwt",data.token)
-                localStorage.setItem("seller",JSON.stringify(data.seller))
+                localStorage.setItem("seller",JSON.stringify(data.user))
                 M.toast({html:data.message,classes:"#00e676 green accent-3"})
                 history.push('/seller.................x')
             }

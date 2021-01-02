@@ -29,7 +29,7 @@ function SellerLogin() {
                     localStorage.setItem("jwt",data.token)
                     localStorage.setItem("seller",JSON.stringify(data.user))
                     // console.log(data.user)
-                    dispatch({type:"SELLER",payload:data.seller})
+                    dispatch({type:"SELLER",payload:data.user})
                     M.toast({html:"Loggedin Succesfully",classes:"#00e676 green accent-3"})
                     history.push('/seller.................x')
                 }

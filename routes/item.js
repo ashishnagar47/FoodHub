@@ -34,6 +34,20 @@ route.get('/showItem',(req,res)=>{
     .catch(err=>console.log(err))
 })
 
+route.get('/showItem/:cityName',(req,res)=>{
+    Item.find({cityName:req.params['cityName']})
+    .populate("postedBy","_id storeName address cityName")
+    .then(item=>res.json({item}))
+    .catch(err=>console.log(err))
+})
+
+route.get('/showItem/:storeName',(req,res)=>{
+    Item.find({cityName:req.params['storeName']})
+    .populate("postedBy","_id storeName address cityName")
+    .then(item=>res.json({item}))
+    .catch(err=>console.log(err))
+})
+
 route.get('/myItem',reqLoginSeller,(req,res)=>{
     Item.find({postedBy:req.user._id})
     .populate("postedBy","_id storeName address cityName")

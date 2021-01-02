@@ -20,6 +20,7 @@ import {Link} from "react-router-dom"
 
 export const Intro = () => {
     const {state,dispatch}=useContext(UserContext)
+    console.log({state})
      
 return (
 <div  >
@@ -74,65 +75,85 @@ return (
 
         <div className="Popular">
             <div className="card ">
+                <a href="seller/Ahmedabad">
                 <img className="card-img-top" src={ahmedabad} alt="Card cap" />
                 <div className="card-body">
                     <h4 className="card-title ">Ahmedabad</h4>
                 </div>
+                </a>
             </div>
             <div className="card ">
+                <a href="seller/Bangalore">
                 <img className="card-img-top" src={bangalore} alt="Card cap" />
                 <div className="card-body">
                     <h4 className="card-title ">Bangalore</h4>
                 </div>
+                </a>
             </div>
             <div className="card ">
+                <a href="seller/Chennai">
                 <img className="card-img-top" src={chennai} alt="Card cap" />
                 <div className="card-body">
                     <h4 className="card-title ">Chennai</h4>
                 </div>
+                </a>
             </div>
             <div className="card ">
+                <a href="seller/Delhi">
                 <img className="card-img-top" src={delhi} alt="Card cap" />
                 <div className="card-body">
                     <h4 className="card-title ">Delhi</h4>
                 </div>
+                </a>
             </div>
             <div className="card ">
+                <a href="seller/Gurgaon">
                 <img className="card-img-top" src={gurgaon} alt="Card cap" />
                 <div className="card-body">
                     <h4 className="card-title ">Gurgaon</h4>
                 </div>
+                </a>
             </div>
             <div className="card ">
+                <a href="seller/Hyderabad">
                 <img className="card-img-top" src={hyderabad} alt="Card cap" />
                 <div className="card-body">
                     <h4 className="card-title ">Hyderabad</h4>
                 </div>
+                </a>
             </div>
             <div className="card ">
+                <a href="seller/Mumbai">
                 <img className="card-img-top" src={mumbai} alt="Card cap" />
                 <div className="card-body">
                     <h4 className="card-title ">Mumbai</h4>
                 </div>
+                </a>
             </div>
             <div className="card ">
+                <a href="seller/Kolkata">
                 <img className="card-img-top" src={kolkata} alt="Card cap" />
                 <div className="card-body">
                     <h4 className="card-title ">Kolkata</h4>
                 </div>
+                </a>
             </div>
             <div className="card ">
+                <a href="seller/Ahmedabad">
                 <img className="card-img-top" src={pune} alt="Card cap" />
                 <div className="card-body">
                     <h4 className="card-title ">Pune</h4>
                 </div>
+                </a>
             </div>
+        
         </div>
 
     </div>
 
     <div>
-        For Merchants 
+        For Merchants
+         
         <Link to={state?"/seller.................x":"/sell/login"}>click here</Link>
         {/* <a href="/sell/login">click here</a> */}
     </div>
