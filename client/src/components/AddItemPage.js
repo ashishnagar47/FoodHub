@@ -50,9 +50,7 @@ function AddItemPage() {
         })
         .then(res=>res.json())
         .then(data=>setUrl(data.url))
-        .catch(err=>{console.log(err)})
-
-        
+        .catch(err=>{console.log(err)})    
     }
 
     return (

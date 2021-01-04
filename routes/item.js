@@ -34,8 +34,8 @@ route.get('/showItem',(req,res)=>{
     .catch(err=>console.log(err))
 })
 
-route.get('/showItem/:cityName',(req,res)=>{
-    Item.find({cityName:req.params['cityName']})
+route.get('/showItem',(req,res)=>{
+    Item.find()
     .populate("postedBy","_id storeName address cityName")
     .then(item=>res.json({item}))
     .catch(err=>console.log(err))

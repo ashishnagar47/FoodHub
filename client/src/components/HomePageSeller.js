@@ -9,8 +9,8 @@ function HomePageSeller() {
                     FOODHUB
                 </div>
                 <span className="authentication">
-                    <a type="button" className="btn btn-outline-secondary" href="/seller/login">Login</a>
-                    <a type="button" className="btn btn-outline-secondary" href="/seller/signup">Signup</a>
+                    <a type="button" className="btn btn-outline-secondary" href="/sell/login">Login</a>
+                    <a type="button" className="btn btn-outline-secondary" href="/sell/signup">Signup</a>
                 </span>
             </div>
 

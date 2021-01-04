@@ -47,7 +47,7 @@ function SellerLogin() {
                         Login
                     </button>
                     <h6>
-                        <Link to="/seller/signup">Create account</Link>
+                        <Link to="/sell/signup">Create account</Link>
                     </h6>
                 </div>
             </div>

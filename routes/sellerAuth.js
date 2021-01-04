@@ -7,8 +7,10 @@ const jwt=require('jsonwebtoken')
 const {JWT_SECRET} =require('../configuration/keys')
 const reqLogin=require('../middleware/requireLoginSeller')
 
-route.get('/protected1',reqLogin,(req,res)=>{
-    res.send('hello seller')
+route.get('/seller/:cityName',(req,res)=>{
+    Seller.find({cityName:req.params['cityName']})
+    .then(store=>{res.json({store})})
+    .catch((err)=>console.log(err))
 })
 
 route.post('/seller/signup',(req,res)=>{
@@ -35,10 +37,11 @@ route.post('/seller/signup',(req,res)=>{
                     image,
                     address,
                     cityName
-                })
-            
+                })  
             seller.save()
             .then(seller=>{
+                // const token=jwt.sign({_id:seller._id},JWT_SECRET)
+                // res.json({token,user:{name,email}})
                 res.json({message:"Saved Successfully"})
             })
             .catch((err)=>console.log(err))
