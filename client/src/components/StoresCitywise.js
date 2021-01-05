@@ -28,44 +28,41 @@ function StoresCitywise() {
             <div style={{color:"tomato",marginTop:"0vh", marginLeft:"32vw" }} className="shopName">
                  Best Of {filename}
             </div>
+            <div  className="Popular">
             {
                 data.map(store=>{
                     return(
-                    //     <div style={{margin:"2vh"}} className="row s12 m12">
-                    //     {/* <h2 className="header">Horizontal Card</h2> */}
-                    //     <div style={{width:"80vw"}} className="card horizontal">
-                    //     <div className= "col card-image">
-                    //         <img style={{width:"20vw",margin:"2vw"}} src={Ahmedabad} alt="abc"/>
-                    //     </div>
-                    //     <div className="col card-stacked">
-                    //         <div style={{marginLeft:"25vw", marginTop:"-15vh"}} className="card-content">
-                    //             <h3>{store.storeName}</h3>
-                    //             <h4>{store.cityName}</h4>
-                    //             <h4>{store.address}</h4>
-                    //         <p>I am a very simple card. I am good at containing small bits of information.</p>
-                    //         </div>
-                    //     </div>
-                    //     </div>
-                    // </div>
-                    <div class="row">
-                    <div class="col s12 m7">
-                      <div class="card">
-                        <div class="card-image">
-                          <img src={store.image} />
-                          <span class="card-title">{store.storeName}</span>
+                      
+                        <div style={{height:"40vh"}} className="card ">
+                            <img className="card-img-top" src={store.image} alt="Card cap" />
+                            <div className="card-body">
+                                <h4 style={{fontWeight:"bold"}} className="card-title ">{store.storeName}</h4>
+                                <div style={{fontSize:"20px"}} className="card-title ">{store.address}</div>
+                                {/* <div>{store.address}</div> */}
+                            </div>
                         </div>
                         
-                        <div class="card-action">
-                          {store.address}
-                          {/* <a href="#">This is a link</a> */}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  //   <div class="row">
+                  //   <div class="col s12 m7">
+                  //     <div class="card">
+                  //       <div class="card-image">
+                  //         <img src={store.image} />
+                  //         <span class="card-title">{store.storeName}</span>
+                  //       </div>
+                        
+                  //       <div class="card-action">
+                  //         {store.address}
+                  //         {/* <a href="#">This is a link</a> */}
+                  //       </div>
+                  //     </div>
+                  //   </div>
+                  // </div>
                             
                     )
+                    
                 })
             }
+            </div>
             
             {/* {filename} */}
             {/* <Image></Image> */}

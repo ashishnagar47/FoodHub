@@ -44,7 +44,7 @@ function SellerSignup() {
                     // localStorage.setItem("seller",JSON.stringify(data.user))
                     // dispatch({type:"SELLER",payload:data.user})
                     M.toast({html:data.message,classes:"#00e676 green accent-3"})
-                    history.push('/sell/signup')
+                    history.push('/sell/signin')
                 }
             })
         }

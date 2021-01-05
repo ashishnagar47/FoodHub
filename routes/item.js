@@ -42,7 +42,7 @@ route.get('/showItem',(req,res)=>{
 })
 
 route.get('/showItem/:storeName',(req,res)=>{
-    Item.find({cityName:req.params['storeName']})
+    Item.find({postedBy:req.params.storeName})
     .populate("postedBy","_id storeName address cityName")
     .then(item=>res.json({item}))
     .catch(err=>console.log(err))

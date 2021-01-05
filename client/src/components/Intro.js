@@ -29,41 +29,53 @@ return (
     </div>
 
     <div className="Popular">
-        <div className="card ">
+        <div className="card "> 
+        <a style={{textDecoration:"none"}} href="showItem/Dominos"> 
             <img className="card-img-top" src={dominos} alt="Card cap" />
             <div className="card-body">
                 <h4 className="card-title ">Dominos Pizza</h4>
             </div>
+            </a>
         </div>
-        <div className="card ">
+        <div className="card "> 
+        <a style={{textDecoration:"none"}} href="showItem/BurgerKing">
             <img className="card-img-top" src={BurgerKing} alt="Card cap" />
             <div className="card-body">
                 <h4 className="card-title ">Burger King</h4>
             </div>
+            </a>
         </div>
-        <div className="card ">
+        <div className="card "> 
+        <a style={{textDecoration:"none"}} href="showItem/Behrouz">
             <img className="card-img-top" src={behrouz} alt="Card cap" />
             <div className="card-body">
                 <h4 className="card-title ">Behrouz Biryani</h4>
             </div>
+            </a>
         </div>
-        <div className="card ">
+        <div className="card "> 
+        <a style={{textDecoration:"none"}} href="showItem/KFC">
             <img className="card-img-top" src={KFC} alt="Card cap" />
             <div className="card-body">
                 <h4 className="card-title ">KFC</h4>
             </div>
+            </a>
         </div>
-        <div className="card ">
+        <div className="card "> 
+        <a style={{textDecoration:"none"}} href="showItem/WOW_MOMO">
             <img className="card-img-top" src={wow_Momo} alt="Card cap" />
             <div className="card-body">
                 <h4 className="card-title ">Wow Momo</h4>
             </div>
+            </a>
         </div>
-        <div className="card ">
+        <div className="card "> 
+        <a style={{textDecoration:"none"}} href="showItem/Subway">
             <img className="card-img-top" src={subway} alt="Card cap" />
             <div className="card-body">
                 <h4 className="card-title ">Subway</h4>
             </div>
+            </a>
         </div>
 
     </div>
@@ -75,7 +87,7 @@ return (
 
         <div className="Popular">
             <div className="card ">
-                <a href="seller/Ahmedabad">
+                <a style={{textDecoration:"none"}} href="seller/Ahmedabad">
                 <img className="card-img-top" src={ahmedabad} alt="Card cap" />
                 <div className="card-body">
                     <h4 className="card-title ">Ahmedabad</h4>
@@ -83,7 +95,7 @@ return (
                 </a>
             </div>
             <div className="card ">
-                <a href="seller/Bangalore">
+                <a style={{textDecoration:"none"}} href="seller/Bangalore">
                 <img className="card-img-top" src={bangalore} alt="Card cap" />
                 <div className="card-body">
                     <h4 className="card-title ">Bangalore</h4>
@@ -91,7 +103,7 @@ return (
                 </a>
             </div>
             <div className="card ">
-                <a href="seller/Chennai">
+                <a style={{textDecoration:"none"}} href="seller/Chennai">
                 <img className="card-img-top" src={chennai} alt="Card cap" />
                 <div className="card-body">
                     <h4 className="card-title ">Chennai</h4>
@@ -99,7 +111,7 @@ return (
                 </a>
             </div>
             <div className="card ">
-                <a href="seller/Delhi">
+                <a style={{textDecoration:"none"}} href="seller/Delhi">
                 <img className="card-img-top" src={delhi} alt="Card cap" />
                 <div className="card-body">
                     <h4 className="card-title ">Delhi</h4>
@@ -107,7 +119,7 @@ return (
                 </a>
             </div>
             <div className="card ">
-                <a href="seller/Gurgaon">
+                <a style={{textDecoration:"none"}} href="seller/Gurgaon">
                 <img className="card-img-top" src={gurgaon} alt="Card cap" />
                 <div className="card-body">
                     <h4 className="card-title ">Gurgaon</h4>
@@ -115,7 +127,7 @@ return (
                 </a>
             </div>
             <div className="card ">
-                <a href="seller/Hyderabad">
+                <a style={{textDecoration:"none"}} href="seller/Hyderabad">
                 <img className="card-img-top" src={hyderabad} alt="Card cap" />
                 <div className="card-body">
                     <h4 className="card-title ">Hyderabad</h4>
@@ -123,7 +135,7 @@ return (
                 </a>
             </div>
             <div className="card ">
-                <a href="seller/Mumbai">
+                <a style={{textDecoration:"none"}} href="seller/Mumbai">
                 <img className="card-img-top" src={mumbai} alt="Card cap" />
                 <div className="card-body">
                     <h4 className="card-title ">Mumbai</h4>
@@ -131,7 +143,7 @@ return (
                 </a>
             </div>
             <div className="card ">
-                <a href="seller/Kolkata">
+                <a style={{textDecoration:"none"}} href="seller/Kolkata">
                 <img className="card-img-top" src={kolkata} alt="Card cap" />
                 <div className="card-body">
                     <h4 className="card-title ">Kolkata</h4>
@@ -139,7 +151,7 @@ return (
                 </a>
             </div>
             <div className="card ">
-                <a href="seller/Ahmedabad">
+                <a style={{textDecoration:"none"}} href="seller/Ahmedabad">
                 <img className="card-img-top" src={pune} alt="Card cap" />
                 <div className="card-body">
                     <h4 className="card-title ">Pune</h4>
@@ -155,7 +167,7 @@ return (
         For Merchants
          
         <Link to={state?"/seller.................x":"/sell/login"}>click here</Link>
-        {/* <a href="/sell/login">click here</a> */}
+        {/* <a style={{textDecoration:"none"}} href="/sell/login">click here</a> */}
     </div>
 
 </div>
