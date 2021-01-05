@@ -12,13 +12,15 @@ route.post('/createItem',reqLoginSeller,(req,res)=>{
     }
     req.user.password=undefined;
     // req.user.address=undefined;
+    console.log(req.user)
     const item=new Item({
         name,
         category,
         price,
         picture,
         description,
-        postedBy:req.user
+        postedBy:req.user,
+        storeName:req.user.storeName
     })
     item.save()
     .then(result=>{
@@ -42,7 +44,7 @@ route.get('/showItem',(req,res)=>{
 })
 
 route.get('/showItem/:storeName',(req,res)=>{
-    Item.find({postedBy:req.params.storeName})
+    Item.find({storeName:req.params["storeName"]})
     .populate("postedBy","_id storeName address cityName")
     .then(item=>res.json({item}))
     .catch(err=>console.log(err))

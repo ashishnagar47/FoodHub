@@ -13,12 +13,12 @@ function StoresCitywise() {
     const [data,setData]=useState([])
     var url = window.location.pathname;
     var filename = url.substring(url.lastIndexOf('/')+1);
-    console.log(filename)
+    // console.log(filename)
     useEffect(()=>{
         fetch(`/seller/${filename}`)
         .then(res=>res.json())
         .then(result=>{
-            console.log(result)
+            // console.log(result)
             setData(result.store)
         })
     },[])

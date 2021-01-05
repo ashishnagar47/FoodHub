@@ -34,7 +34,7 @@ function AddItemPage() {
                 }
                 else{
                     M.toast({html:"Created Succesfully",classes:"#00e676 green accent-3"})
-                    history.push('/seller')
+                    history.push('/seller.................x')
                 }
             })
     }

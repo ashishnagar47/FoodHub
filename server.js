@@ -26,6 +26,6 @@ app.use(require('./routes/userAuth'))
 app.use(require('./routes/sellerAuth'))
 app.use(require('./routes/item'))
 
-app.listen(5002,()=>{
-    console.log("server started on http://localhost:5002")
+app.listen(5001,()=>{
+    console.log("server started on http://localhost:5001")
 })

@@ -24,6 +24,9 @@ const ItemSchema=new mongoose.Schema({
     description:{
         type:String
     },
+    storeName:{
+        type:String
+    },
     postedBy:{
         type:ObjectId,
         ref:"Seller"
