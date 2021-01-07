@@ -163,11 +163,34 @@ return (
 
     </div>
 
-    <div>
+    {/* <div>
         For Merchants
          
         <Link to={state?"/seller.................x":"/sell/login"}>click here</Link>
         {/* <a style={{textDecoration:"none"}} href="/sell/login">click here</a> */}
+    {/* </div>  */}
+    <div >
+        <footer style={{backgroundColor:"#00897b teal darken-1" }} className="page-footer">
+          <div className="container">
+            <div className="row">
+              <div className="col l6 s12">
+                <h5 className="white-text">For Merchants</h5>
+                <p className="grey-text text-lighten-4">Hii, Do you want sell your dishes here.</p>
+              </div>
+              <div className="col l4 offset-l2 s12">
+              <Link className="white-text"  to={state?"/seller.................x":"/sell/login"}>Click here</Link>
+                {/* <h5 className="white-text" href="#!">>Click here</h5> */}
+                
+              </div>
+            </div>
+          </div>
+          <div className="footer-copyright">
+            <div className="container">
+            © 2021 Copyright Text
+            {/* <a className="grey-text text-lighten-4 right" href="#!">More Links</a> */}
+            </div>
+          </div>
+        </footer>
     </div>
 
 </div>

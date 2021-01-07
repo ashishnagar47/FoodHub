@@ -32,14 +32,15 @@ function StoresCitywise() {
             {
                 data.map(store=>{
                     return(
-                      
                         <div style={{height:"40vh"}} className="card ">
+                            <a style={{textDecoration:"none"}} href={'/showItem/'+store.storeName}>
                             <img className="card-img-top" src={store.image} alt="Card cap" />
                             <div className="card-body">
                                 <h4 style={{fontWeight:"bold"}} className="card-title ">{store.storeName}</h4>
                                 <div style={{fontSize:"20px"}} className="card-title ">{store.address}</div>
                                 {/* <div>{store.address}</div> */}
                             </div>
+                            </a>
                         </div>
                         
                   //   <div class="row">

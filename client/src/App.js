@@ -11,6 +11,7 @@ import AddItemPage from './components/AddItemPage';
 import {reducer,initialState} from './reducer/Reducer'
  import StoresCitywise from './components/StoresCitywise';
 import ShowStoreItem from './components/ShowStoreItem';
+import Footer from './components/Footer';
 
 export const UserContext=createContext();
 

@@ -151,6 +151,10 @@
     margin-top: -40vh;
 }
 
+.page-footer{
+    background-color: rgb(118, 112, 121) !important;
+}
+
 /* for mobiles */
 @media only screen and (max-width:700px){
     .Intro{

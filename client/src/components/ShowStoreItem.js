@@ -19,49 +19,23 @@ function ShowStoreItem() {
 
     return (
         <div> 
-            <div className="slab">
-            <div style={{color:"tomato"}} className="shopName">`${filename}</div>  
+            <div style={{height:"20vh"}} className="slab">
+            <div style={{color:"tomato" , marginTop:"0vh",fontSize:"12vh"}} className="shopName">{filename}</div>  
             </div> 
-             {/* {
-               data1.map(postedBy=>{
-                   
-                //    console.log(data1)
-                   return(
-                       <>
-                        <div className="slab">
-                        {/* <img style={{height:"30vh", marginTop:"1%",marginLeft:"20%",margin:"3%"}} src={item.postedBy.image} alt="hdjh"></img> */}
-                        {/* <a type="button" id="btn2" className="btn btn-outline-secondary" href="/seller/addItem">+ Add Item</a> */}
-                        {/* <div style={{color:"tomato"}} className="shopName">{postedBy.storeName}</div> */}
-                        {/* <div style={{color:"tan"}} className="shopCity">Tasty</div> */}
-                        {/* <div style={{color:"tan"}} className="shopCity">{postedBy.cityName}</div> */}
-                        {/* </div> */}
-                        {/* </> */}
-                        {/* ) */}
-                   
-                    {/* }) */}
-                {/* } */} 
+             
                 {
                 data.map(item=>{
                     return(
                         <>
-                        {/* <div className="slab">
-                            <img style={{height:"30vh", marginTop:"1%",marginLeft:"20%",margin:"3%"}} src={Dpizza} alt="hdjh"></img>
-                            {/* <a type="button" id="btn2" className="btn btn-outline-secondary" href="/seller/addItem">+ Add Item</a> */}
-                            {/* <div style={{color:"tomato"}} className="shopName">{item.postedBy.storeName}</div> */}
-                            {/* <div style={{color:"tan"}} className="shopCity">Tasty</div> */}
-                            {/* <div style={{color:"tan"}} className="shopCity">{item.postedBy.cityName}</div> */}
-                        {/* </div> */} 
                         <div style={{margin:"2vw"}} className="row s12 m12">
-                            {/* <h2 className="header">Horizontal Card</h2> */}
                             <div style={{width:"80vw",height:"30vh"}} className="card horizontal">
                             <div className= "col card-image">
-                                <img style={{width:"20vw",margin:"2vw"}} src={item.picture} alt="abc"/>
+                                <img style={{width:"20vw",height:"25vh",margin:"1vw"}} src={item.picture} alt="abc"/>
                             </div>
                             <div className="col card-stacked">
                                 <div style={{marginLeft:"25vw", marginTop:"-15vh"}} className="card-content">
-                                    <h3 style={{marginLeft:"20vw"}}>{item.name}</h3>
-                                    {/* <h6>{item.category}</h6> */}
-                                <h6>₹{item.price}</h6>
+                                    <h3 style={{marginLeft:"10vw",marginBottom:"2vw"}}>{item.name}</h3>
+                                <h5>₹{item.price}</h5>
                                 <p>{item.description}</p>
                                 </div>
                             </div>
