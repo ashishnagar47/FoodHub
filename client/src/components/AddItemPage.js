@@ -11,8 +11,13 @@ function AddItemPage() {
     const [image,setImage]=useState("");
     const [description,setDescription]=useState("");
     const [url,setUrl]=useState("");
+    const [data,setData]=useState(null);
 
+    
     useEffect(()=>{
+        var p=(localStorage.getItem("seller"))
+        console.log(p)
+        setData(p);
         if(url){
             fetch("/createItem",{
                 method:"post",
@@ -33,8 +38,9 @@ function AddItemPage() {
                 M.toast({html:data.error,classes:"#37474f blue-grey darken-3"})
                 }
                 else{
+
                     M.toast({html:"Created Succesfully",classes:"#00e676 green accent-3"})
-                    history.push('/seller.................x')
+                    history.push(`/seller.................x/${data.storeName}`)
                 }
             })
     }

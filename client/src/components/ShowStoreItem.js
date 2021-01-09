@@ -1,33 +1,44 @@
 import React,{useState,useEffect} from 'react'
-import Dpizza from "../media/Dpizza.jpg"
 
 function ShowStoreItem() {
     const [data,setData]=useState([]);
-    const [data1,setData1]=useState([0]);
+    const [data1,setData1]=useState(null);
     var url = window.location.pathname;
     var filename = url.substring(url.lastIndexOf('/')+1);
     useEffect(()=>{
         fetch(`/showItem/${filename}`)
         .then(res=>res.json())
         .then(result=>{
-            // console.log(result.item[0])
             setData(result.item)
-            setData1(result.item)
-            console.log(data1)
         })
+    },[])
+    useEffect(()=>{
+        fetch(`/selle/${filename}`)
+        .then(res=>res.json())
+        .then(store=>{
+            setData1(store.store)
+            console.log(store)
+        })
+        console.log(data1)
     },[])
 
     return (
         <div> 
-            <div style={{height:"20vh"}} className="slab">
-            <div style={{color:"tomato" , marginTop:"0vh",fontSize:"12vh"}} className="shopName">{filename}</div>  
-            </div> 
-             
-                {
+            {
+                data1?( 
+                    <div style={{height:"40vh",marginTop:"0vh", flex:"flexWrap"}} className="slab">
+                        <img style={{height:"30vh", marginTop:"0%",marginLeft:"20%",margin:"3%"}} src={data1.image} alt="hdjh"></img>
+                        <div style={{color:"tomato"}} className="shopName">{data1.storeName}</div>
+                        <div style={{color:"tan"}} className="shopCity">{data1.address}</div>
+                    </div> 
+                
+                ):<h2>loading...</h2>
+}  
+            {
                 data.map(item=>{
                     return(
                         <>
-                        <div style={{margin:"2vw"}} className="row s12 m12">
+                        <div style={{margin:"2vw"}} className="row s12 m12" key={item._id}>
                             <div style={{width:"80vw",height:"30vh"}} className="card horizontal">
                             <div className= "col card-image">
                                 <img style={{width:"20vw",height:"25vh",margin:"1vw"}} src={item.picture} alt="abc"/>

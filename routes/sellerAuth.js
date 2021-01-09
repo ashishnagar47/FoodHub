@@ -13,6 +13,12 @@ route.get('/seller/:cityName',(req,res)=>{
     .catch((err)=>console.log(err))
 })
 
+route.get('/selle/:storeName',(req,res)=>{
+    Seller.findOne({storeName:req.params['storeName']})
+    .then(store=>{res.json({store})})   
+    .catch((err)=>console.log(err))
+})
+
 route.post('/seller/signup',(req,res)=>{
     const {name,email,password,storeName,image,address,cityName}=req.body
     console.log(req.body);
@@ -66,8 +72,8 @@ route.post('/seller/signin',(req,res)=>{
         .then((doMatch)=>{
             if(doMatch){
                 const token=jwt.sign({_id:savedSeller._id},JWT_SECRET)
-                const {_id,name,email}=savedSeller;
-                res.json({token,user:{_id,name,email}})
+                const {_id,name,email,storeName,image,address}=savedSeller;
+                res.json({token,user:{_id,name,email,storeName,image,address}})
                 // res.json({message:"Signin succesfully"})
             }
             else{

@@ -33,8 +33,8 @@ const Routing=()=>{
         <Navbar />
         <Intro />
       </Route>
-      <Route exact path="/seller.................x">
-          <SellerPage></SellerPage>
+      <Route exact path="/seller.................x/:storeName" component={SellerPage}>
+          {/* <SellerPage></SellerPage> */}
       </Route>
       <Route path="/sell/login">
           <HomePageSeller></HomePageSeller>
