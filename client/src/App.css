@@ -1,5 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+
 .Navbar{
     background-image: url("./media/homePage.png");
     background-position: center; 
@@ -13,7 +14,7 @@
 .name{
     font-size: 10vw;
     margin-left: 23%;
-    margin-top: 5%;
+    margin-top: -20vh;
     font-weight: bolder;
     color:rgba(255, 255, 255, 0.918);
     font-family: 'Fredericka the Great', cursive;

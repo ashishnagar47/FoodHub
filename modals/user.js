@@ -13,11 +13,11 @@ const userSchema=mongoose.Schema({
     password:{
         type:String,
         require:true
-    },
-    order:{
-        type:ObjectId,
-        ref:"Item"
     }
+    // order:{
+    //     type:ObjectId,
+    //     ref:"Item"
+    // }
 })
 
 mongoose.model("User",userSchema)

@@ -1,45 +1,45 @@
 import React,{useEffect,useState,useContext} from 'react'
+import {useHistory} from 'react-router-dom'
 import {UserContext} from "../App"
 
 function SellerPage() {
+    const history=useHistory()
     const {state,dispatch}=useContext(UserContext)
     const [data,setData]=useState([]);
-    const [data1,setData1]=useState(null);
-    var url = window.location.pathname;
-    var filename = url.substring(url.lastIndexOf('/')+1);
+
+    
     useEffect(()=>{
-        fetch(`/showItem/${filename}`)
-        .then(res=>res.json())
-        .then(result=>{
-            setData(result.item)
-            console.log(result.item)
+        fetch('/myItem',{
+            headers:{
+                Authorization:"Bearer "+localStorage.getItem("jwt")
+            }
+        }).then(res=>res.json())
+        .then(myStore=>{
+            setData(myStore.myItem)
+            // console.log(myStore)
         })
-    },[])
-    useEffect(()=>{
-        fetch(`/selle/${filename}`)
-        .then(res=>res.json())
-        .then(store=>{
-            setData1(store.store)
-            console.log(store)
-        })
-        // console.log(data1)
+        
     },[])
 
+    const Logout=()=>{
+        localStorage.clear()
+        dispatch({type:"CLEAR"})
+        history.push('/')
+    }
+    if(state){
     return (
         <div>
             {
-                data1?(
+                state?(
                     <div style={{flex:"flexWrap"}} className="slab">
-                        <img style={{height:"30vh", marginTop:"1%",marginLeft:"20%",margin:"3%"}} src={data1.image} alt="hdjh"></img>
+                        <img style={{height:"30vh", marginTop:"1%",marginLeft:"20%",margin:"3%"}} src={state.image} alt="hdjh"></img>
                         <button style={{marginTop:"-75vh"}} type="button" id="btn2" className="btn btn-outline-secondary"
-                            onClick={()=>{localStorage.clear()
-                                dispatch({type:"CLEAR"})    
-                            }}
+                            onClick={()=>Logout()}
                         >Log out</button>
                         <a type="button" id="btn2" className="btn btn-outline-info" href="/seller/addItem">+ Add Item</a>
-                        <div style={{color:"tomato",marginTop:"-45vh"}} className="shopName">{data1.storeName}</div>
+                        <div style={{color:"tomato",marginTop:"-45vh"}} className="shopName">{state.storeName}</div>
                         {/* <div style={{color:"tan"}} className="shopCity">Tasty</div> */}
-                        <div style={{color:"tan"}} className="shopCity">{data1.address}</div>
+                        <div style={{color:"tan"}} className="shopCity">{state.address}</div>
                     </div>)
                 :<h2>loading...</h2>
             }
@@ -68,5 +68,15 @@ function SellerPage() {
         </div>
     )
 }
+
+if(!state){
+    return(
+        <div>
+        <h1>Hello</h1>
+        </div>
+    )
+}
+}
+
 
 export default SellerPage

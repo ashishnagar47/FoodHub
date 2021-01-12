@@ -4,9 +4,13 @@ const Navbar=()=> {
     return (
         <div >
            <div className="Navbar">
-               <div>
-                   <a className="name1">Login</a>
-                   <a className="name1">Signup</a>
+               <div style={{marginTop:"10vh",marginLeft:"88vw"}} >
+                   <button style={{marginTop:"5vh"}} className="btn btn-secondary" >
+                       <a style={{color:"white",textDecoration:"none"}} href="/login">Login</a></button>
+                   <button style={{marginTop:"5vh"}}  className="btn btn-secondary" >
+                   <a style={{color:"white",textDecoration:"none"}} href="/signup">Signup</a></button>
+                   <button style={{marginTop:"5vh",marginLeft:"-0.3vw"}} className="btn btn-primary" >
+                   <a style={{color:"white",textDecoration:"none"}} href="/Order">Your Order</a></button>
                </div>
                 <div className="name">
                     FOODHUB

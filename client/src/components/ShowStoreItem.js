@@ -5,6 +5,13 @@ function ShowStoreItem() {
     const [data1,setData1]=useState(null);
     var url = window.location.pathname;
     var filename = url.substring(url.lastIndexOf('/')+1);
+    const [count,setCount]=useState(0);
+    const Increase=()=>{
+        setCount(count+1)
+    }
+    const Decrease=()=>{
+        setCount(count-1);
+    }
     useEffect(()=>{
         fetch(`/showItem/${filename}`)
         .then(res=>res.json())
@@ -47,6 +54,25 @@ function ShowStoreItem() {
                                 <div style={{marginLeft:"25vw", marginTop:"-15vh"}} className="card-content">
                                     <h3 style={{marginLeft:"10vw",marginBottom:"2vw"}}>{item.name}</h3>
                                 <h5>₹{item.price}</h5>
+                                {
+                                    (count>0)?(
+                                            
+                                            <button style={{marginLeft:"40vw",color:"white"}} className="btn  #42a5f5 blue lighten-1" >
+                                                <a onClick={()=>Decrease()}>- |&emsp;</a>
+                                                {count} &emsp;|
+                                                <a onClick={()=>Increase()}>+</a>
+                                            </button>
+                                        ):<button style={{marginLeft:"40vw",color:"white"}} onClick={()=>Increase()} className="btn  #42a5f5 blue lighten-1" >+ ADD ITEM</button>
+                                    }
+                                
+                                {/* <button style={{marginLeft:"40vw",color:"white"}} className="btn  #42a5f5 blue lighten-1" >
+                                    + ADD
+                                    <button onClick={()=>Decrease()}>-</button>
+                                    {count}
+                                    <button onClick={()=>Increase()}>+</button>
+                                </button> */}
+                                {/* <button onClick={()=>Increase()}>{count}</button>
+                                <button onClick={()=>Decrease()}>{count}</button> */}
                                 <p>{item.description}</p>
                                 </div>
                             </div>

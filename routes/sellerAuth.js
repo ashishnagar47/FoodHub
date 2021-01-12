@@ -5,7 +5,8 @@ const Seller=mongoose.model('Seller')
 const bcrypt=require('bcryptjs')
 const jwt=require('jsonwebtoken')
 const {JWT_SECRET} =require('../configuration/keys')
-const reqLogin=require('../middleware/requireLoginSeller')
+const reqLogin=require('../middleware/requireLoginSeller');
+const requireLoginSeller = require('../middleware/requireLoginSeller');
 
 route.get('/seller/:cityName',(req,res)=>{
     Seller.find({cityName:req.params['cityName']})
@@ -18,6 +19,7 @@ route.get('/selle/:storeName',(req,res)=>{
     .then(store=>{res.json({store})})   
     .catch((err)=>console.log(err))
 })
+
 
 route.post('/seller/signup',(req,res)=>{
     const {name,email,password,storeName,image,address,cityName}=req.body
@@ -58,7 +60,6 @@ route.post('/seller/signup',(req,res)=>{
 
 route.post('/seller/signin',(req,res)=>{
     const {email,password}=req.body
-
     if(!email || !password){
         res.status(422).json({error:"Please fill all the fields"})
     }
